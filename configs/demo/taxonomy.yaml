@@ -1,0 +1,58 @@
+schema_version: '1.0'
+dimensions:
+  domain:
+  - id: commerce
+    name: Commerce
+    definition: Fictional goods and services business
+    synonyms: []
+    sources: []
+  role:
+  - id: procurement
+    name: Procurement
+    definition: Purchase and supplier settlement
+    synonyms: []
+    sources: []
+  - id: finance
+    name: Finance
+    definition: Payables reconciliation and payment approval
+    synonyms: []
+    sources: []
+  - id: operations
+    name: Operations
+    definition: Receipt and supplier exception coordination
+    synonyms: []
+    sources: []
+  scenario:
+  - id: settlement
+    name: Supplier settlement
+    definition: Order, receipt and invoice reconciliation
+    synonyms: []
+    sources: []
+  work_need:
+  - id: reconcile
+    name: Reconcile payables
+    definition: Match source records and compute payable amount
+    synonyms: []
+    sources: []
+  business_object:
+  - id: purchase
+    name: Purchase
+    definition: Goods received against a purchase order
+    synonyms: []
+    sources: []
+  execution_pattern:
+  - id: three_way_match
+    name: Three way match
+    definition: Compare order, receipt and invoice
+    synonyms: []
+    sources: []
+compatibility:
+- effect: allow
+  when:
+    scenario:
+    - settlement
+  require:
+    work_need:
+    - reconcile
+    execution_pattern:
+    - three_way_match

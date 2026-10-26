@@ -1,0 +1,12 @@
+search:
+  provider: brave
+  api_key_env: BRAVE_SEARCH_API_KEY
+llm:
+  enabled: false
+  base_url: https://api.openai.com/v1
+  model: ''
+  api_key_env: OFFICE_SYNTH_LLM_KEY
+  max_output_tokens: 3000
+  max_retries: 1
+note: Copy llm settings into pipeline.yaml; secrets only in environment. Set an available
+  model explicitly.

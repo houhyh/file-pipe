@@ -1,0 +1,15 @@
+# Three role perspectives over the same settlement family; all sources are fixtures.
+schema_version: '1.0'
+taxonomy: taxonomy.yaml
+run:
+  random_seed: 42
+  output_dir: ../../runs/roles
+  mode: synthetic_world
+  fixture: true
+sampling:
+  candidate_limit: 12
+  target_seeds: 3
+  instances_per_seed: 2
+validation:
+  render: true
+  recalculate: true

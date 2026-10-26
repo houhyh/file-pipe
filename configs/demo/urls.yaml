@@ -1,0 +1,21 @@
+# No search or model credentials required. Downloads real public reference materials.
+schema_version: '1.0'
+taxonomy: taxonomy.yaml
+run:
+  random_seed: 42
+  output_dir: ../../runs/urls
+  mode: synthetic_world
+  fixture: false
+sampling:
+  candidate_limit: 3
+  target_seeds: 1
+  instances_per_seed: 2
+retrieval:
+  timeout_seconds: 15
+  retries: 1
+  urls:
+    - https://controller.vpfa.fsu.edu/services/accounts-payable/payments-with-purchase-order/invoice-submission
+    - https://www.rockefeller.edu/materials-management/p/purchasing/two-way-and-three-way-matches/
+    - https://www.honeywell.com/content/dam/honeywellbt/en/documents/downloads/hon-corp-supplier-3-way-match-website.pdf
+llm:
+  enabled: false

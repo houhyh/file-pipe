@@ -1,0 +1,61 @@
+schema_version: '1.0'
+run:
+  random_seed: 42
+  output_dir: ../../runs/demo
+  mode: synthetic_world
+  fixture: true
+sampling:
+  candidate_limit: 12
+  target_seeds: 1
+  instances_per_seed: 2
+retrieval:
+  provider: brave
+  max_queries_per_candidate: 3
+  max_results_per_query: 3
+  max_sources_per_seed: 6
+  max_gap_search_rounds: 1
+  timeout_seconds: 20
+  max_file_bytes: 10485760
+  retries: 2
+  site_interval_seconds: 0.2
+  allowed_private_hosts: []
+  urls: []
+seeds:
+  min_sources: 2
+llm:
+  enabled: false
+  base_url: https://api.openai.com/v1
+  model: ''
+  api_key_env: OFFICE_SYNTH_LLM_KEY
+  max_output_tokens: 3000
+  max_retries: 1
+generation:
+  files_per_workspace:
+  - 5
+  - 8
+  required_formats:
+  - docx
+  - xlsx
+  - pptx
+  - pdf
+  max_parallel_llm_calls: 2
+  max_repair_attempts: 2
+  enable_event: true
+  optional_formats: []
+validation:
+  render: false
+  recalculate: false
+  required_checks:
+  - structure
+  - facts
+  - calculations
+  - references
+  - dependencies
+  - versions
+  - world
+budget:
+  max_llm_requests: 30
+  max_search_requests: 30
+  max_download_bytes: 104857600
+  max_wall_seconds: 3600
+taxonomy: taxonomy.yaml
